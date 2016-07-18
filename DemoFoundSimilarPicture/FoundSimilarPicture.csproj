@@ -104,12 +104,19 @@
     <Content Include="images\original\imageresize_horiz.jpg" />
     <Content Include="images\original\imageresize_vert.jpg" />
     <Content Include="images\original\original.jpg" />
+    <Content Include="images\part-lol\0.jpg" />
+    <Content Include="images\part-lol\1.jpg" />
+    <Content Include="images\part-lol\2.jpg" />
+    <Content Include="images\part-lol\3.jpg" />
+    <Content Include="images\part-lol\4.jpg" />
+    <Content Include="images\part-lol\5.jpg" />
     <Content Include="images\samples\sample_0.jpg" />
     <Content Include="images\samples\sample_1.jpg" />
     <Content Include="images\samples\sample_2.jpg" />
     <Content Include="images\samples\sample_3.jpg" />
     <Content Include="images\samples\sample_4.jpg" />
     <Content Include="images\samples\sample_5.jpg" />
+    <Content Include="images\samples\sample_6.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
