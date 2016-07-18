@@ -1,0 +1,7 @@
+E:\code\c#\demo\Picture\DemoFoundSimilarPicture\DemoFoundSimilarPicture\bin\Release\DemoFoundSimilarPicture.exe
+E:\code\c#\demo\Picture\DemoFoundSimilarPicture\DemoFoundSimilarPicture\bin\Release\DemoFoundSimilarPicture.pdb
+E:\code\c#\demo\Picture\DemoFoundSimilarPicture\DemoFoundSimilarPicture\obj\Release\DemoFoundSimilarPicture.Form1.resources
+E:\code\c#\demo\Picture\DemoFoundSimilarPicture\DemoFoundSimilarPicture\obj\Release\DemoFoundSimilarPicture.Properties.Resources.resources
+E:\code\c#\demo\Picture\DemoFoundSimilarPicture\DemoFoundSimilarPicture\obj\Release\FoundSimilarPicture.csproj.GenerateResource.Cache
+E:\code\c#\demo\Picture\DemoFoundSimilarPicture\DemoFoundSimilarPicture\obj\Release\DemoFoundSimilarPicture.exe
+E:\code\c#\demo\Picture\DemoFoundSimilarPicture\DemoFoundSimilarPicture\obj\Release\DemoFoundSimilarPicture.pdb
