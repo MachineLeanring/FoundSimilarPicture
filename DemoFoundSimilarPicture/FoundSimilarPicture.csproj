@@ -71,6 +71,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="ImageHelper.cs" />
+    <Compile Include="TestClassifyGet.cs" />
     <Compile Include="TestImageThumbnail.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -101,6 +102,12 @@
     <Folder Include="images\compress\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\LOL\Defeat\d-1.jpg" />
+    <Content Include="images\LOL\Defeat\d-0.jpg" />
+    <Content Include="images\LOL\Victory\v-0.jpg" />
+    <Content Include="images\LOL\Victory\v-1.jpg" />
+    <Content Include="images\LOL\Victory\v-2.jpg" />
+    <Content Include="images\LOL\Victory\v-3.jpg" />
     <Content Include="images\original\imageresize_horiz.jpg" />
     <Content Include="images\original\imageresize_vert.jpg" />
     <Content Include="images\original\original.jpg" />

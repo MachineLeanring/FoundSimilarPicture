@@ -33,7 +33,14 @@ namespace DemoFoundSimilarPicture
 
         private void imageSimilarMatchButtonClick(object sender, EventArgs e)
         {
-            TestFoundSimiarPicture.testFoundSimilarPicture(ImageHelper.ROOTPATH + @"..\..\images\original\original.jpg", ImageHelper.ROOTPATH + @"..\..\images\samples");
+            TestFoundSimiarPicture.testFoundSimilarPicture(ImageHelper.ROOTPATH + @"..\..\images\part-lol\1.jpg", ImageHelper.ROOTPATH + @"..\..\images\part-lol");
+        }
+
+        private void classifyGetButton_Click(object sender, EventArgs e)
+        {
+            string samplesPath = @"D:\Code\CS\Demo\Picture\FoundSimilarPicture\DemoFoundSimilarPicture\images\LOL\";
+            string testImagePath = @"D:\Code\CS\Demo\Picture\FoundSimilarPicture\DemoFoundSimilarPicture\images\LOL\Victory\v-0.jpg";
+            new TestClassifyGet().execute(samplesPath, testImagePath);
         }
     }
 }
