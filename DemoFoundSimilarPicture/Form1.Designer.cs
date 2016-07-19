@@ -37,11 +37,9 @@
             // 
             // compressButton
             // 
-            this.compressButton.Enabled = false;
-            this.compressButton.Location = new System.Drawing.Point(166, 68);
-            this.compressButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.compressButton.Location = new System.Drawing.Point(111, 45);
             this.compressButton.Name = "compressButton";
-            this.compressButton.Size = new System.Drawing.Size(260, 45);
+            this.compressButton.Size = new System.Drawing.Size(173, 30);
             this.compressButton.TabIndex = 0;
             this.compressButton.Text = "测试压缩图片";
             this.compressButton.UseVisualStyleBackColor = true;
@@ -49,11 +47,9 @@
             // 
             // imageSimilarMatchButton
             // 
-            this.imageSimilarMatchButton.Enabled = false;
-            this.imageSimilarMatchButton.Location = new System.Drawing.Point(166, 273);
-            this.imageSimilarMatchButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.imageSimilarMatchButton.Location = new System.Drawing.Point(111, 182);
             this.imageSimilarMatchButton.Name = "imageSimilarMatchButton";
-            this.imageSimilarMatchButton.Size = new System.Drawing.Size(260, 45);
+            this.imageSimilarMatchButton.Size = new System.Drawing.Size(173, 30);
             this.imageSimilarMatchButton.TabIndex = 1;
             this.imageSimilarMatchButton.Text = "测试图片相似度匹配";
             this.imageSimilarMatchButton.UseVisualStyleBackColor = true;
@@ -61,11 +57,9 @@
             // 
             // fingerPrintButton
             // 
-            this.fingerPrintButton.Enabled = false;
-            this.fingerPrintButton.Location = new System.Drawing.Point(166, 202);
-            this.fingerPrintButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.fingerPrintButton.Location = new System.Drawing.Point(111, 135);
             this.fingerPrintButton.Name = "fingerPrintButton";
-            this.fingerPrintButton.Size = new System.Drawing.Size(260, 45);
+            this.fingerPrintButton.Size = new System.Drawing.Size(173, 30);
             this.fingerPrintButton.TabIndex = 2;
             this.fingerPrintButton.Text = "计算图片指纹";
             this.fingerPrintButton.UseVisualStyleBackColor = true;
@@ -73,11 +67,9 @@
             // 
             // compressButton2
             // 
-            this.compressButton2.Enabled = false;
-            this.compressButton2.Location = new System.Drawing.Point(166, 135);
-            this.compressButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.compressButton2.Location = new System.Drawing.Point(111, 90);
             this.compressButton2.Name = "compressButton2";
-            this.compressButton2.Size = new System.Drawing.Size(260, 45);
+            this.compressButton2.Size = new System.Drawing.Size(173, 30);
             this.compressButton2.TabIndex = 3;
             this.compressButton2.Text = "测试压缩图片2";
             this.compressButton2.UseVisualStyleBackColor = true;
@@ -85,9 +77,10 @@
             // 
             // classifyGetButton
             // 
-            this.classifyGetButton.Location = new System.Drawing.Point(166, 343);
+            this.classifyGetButton.Location = new System.Drawing.Point(111, 229);
+            this.classifyGetButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.classifyGetButton.Name = "classifyGetButton";
-            this.classifyGetButton.Size = new System.Drawing.Size(260, 45);
+            this.classifyGetButton.Size = new System.Drawing.Size(173, 30);
             this.classifyGetButton.TabIndex = 4;
             this.classifyGetButton.Text = "匹配判定";
             this.classifyGetButton.UseVisualStyleBackColor = true;
@@ -95,16 +88,15 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(587, 478);
+            this.ClientSize = new System.Drawing.Size(391, 319);
             this.Controls.Add(this.classifyGetButton);
             this.Controls.Add(this.compressButton2);
             this.Controls.Add(this.fingerPrintButton);
             this.Controls.Add(this.imageSimilarMatchButton);
             this.Controls.Add(this.compressButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "相似图片匹配";

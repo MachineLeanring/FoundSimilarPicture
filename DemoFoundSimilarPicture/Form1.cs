@@ -12,9 +12,10 @@ namespace DemoFoundSimilarPicture
 
         private void compressButtonClick(object sender, EventArgs e)
         {
-            string sourcePath = ImageHelper.ROOTPATH + @"..\..\images\original\original.jpg";
+            string sourcePath = ImageHelper.ROOTPATH + @"..\..\images\part-lol\lol-result-v-0.jpg";
             string targetPath = ImageHelper.ROOTPATH + @"..\..\images\compress\thumbnail.jpg";
-            ImageHelper.saveThumbnail(sourcePath, targetPath, 8, 8, 100);
+            // ImageHelper.saveThumbnail(sourcePath, targetPath, 200, 200, 100);
+            TestGetImageThumbnail.test(sourcePath, targetPath);
             MessageBox.Show(string.Concat(@"图片已压缩，压缩后的图片路径为: ", targetPath));
         }
 
@@ -33,13 +34,13 @@ namespace DemoFoundSimilarPicture
 
         private void imageSimilarMatchButtonClick(object sender, EventArgs e)
         {
-            TestFoundSimiarPicture.testFoundSimilarPicture(ImageHelper.ROOTPATH + @"..\..\images\part-lol\1.jpg", ImageHelper.ROOTPATH + @"..\..\images\part-lol");
+            TestFoundSimiarPicture.testFoundSimilarPicture(ImageHelper.ROOTPATH + @"..\..\images\part-lol\lol-result-v-0.jpg", ImageHelper.ROOTPATH + @"..\..\images\part-lol");
         }
 
         private void classifyGetButton_Click(object sender, EventArgs e)
         {
             string samplesPath = ImageHelper.ROOTPATH + @"..\..\images\LOL\";
-            string testImagePath = ImageHelper.ROOTPATH + @"..\..\images\part-lol\lol-result-v-6.jpg";
+            string testImagePath = ImageHelper.ROOTPATH + @"..\..\images\part-lol\lol-result-v-0.jpg";
             new TestClassifyGet().execute(samplesPath, testImagePath);
         }
     }

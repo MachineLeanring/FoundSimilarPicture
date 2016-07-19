@@ -28,7 +28,7 @@ namespace DemoFoundSimilarPicture
 
 			//create a image object containing a verticel photograph
             Image imgPhotoVert = Image.FromFile(WorkingDirectory + @"..\..\images\original\imageresize_vert.jpg");
-            Image imgPhotoHoriz = Image.FromFile(WorkingDirectory + @"..\..\images\original\imageresize_horiz.jpg");
+            Image imgPhotoHoriz = Image.FromFile(WorkingDirectory + @"..\..\images\original\lol-result-v-0.jpg");
 			Image imgPhoto = null;
 
 			imgPhoto = ScaleByPercent(imgPhotoVert, 50);
@@ -39,15 +39,15 @@ namespace DemoFoundSimilarPicture
             imgPhoto.Save(WorkingDirectory + @"..\..\images\compress\imageresize_2.jpg", ImageFormat.Jpeg);
 			imgPhoto.Dispose();
 
-			imgPhoto = FixedSize(imgPhotoVert, 200, 200);
+			imgPhoto = FixedSize(imgPhotoVert, 8, 8);
             imgPhoto.Save(WorkingDirectory + @"..\..\images\compress\imageresize_3.jpg", ImageFormat.Jpeg);
 			imgPhoto.Dispose();
 
-			imgPhoto = Crop(imgPhotoVert, 200, 200, AnchorPosition.Center);
+			imgPhoto = Crop(imgPhotoVert, 8, 8, AnchorPosition.Center);
             imgPhoto.Save(WorkingDirectory + @"..\..\images\compress\imageresize_4.jpg", ImageFormat.Jpeg);
 			imgPhoto.Dispose();
 
-			imgPhoto = Crop(imgPhotoHoriz, 200, 200, AnchorPosition.Center);
+			imgPhoto = Crop(imgPhotoHoriz, 8, 8, AnchorPosition.Center);
             imgPhoto.Save(WorkingDirectory + @"..\..\images\compress\imageresize_5.jpg", ImageFormat.Jpeg);
 			imgPhoto.Dispose();
 		}

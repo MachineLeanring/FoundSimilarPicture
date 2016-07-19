@@ -34,7 +34,7 @@ namespace DemoFoundSimilarPicture
         public static string getImageFingerPrint(string imageFileFullName, int targetWidth, int targetHight)
         {
             // 第一步，缩小尺寸
-            Bitmap thumbnailBitmap = getImageThumbnail(imageFileFullName, targetWidth, targetHight, AnchorPosition.Center);
+            Bitmap thumbnailBitmap = getThumbnailImage(imageFileFullName, targetWidth, targetHight);
 
             // 第二步，简化色彩
             int[] pixels = getSimplifyPixels(targetWidth, targetHight, thumbnailBitmap);
@@ -252,6 +252,46 @@ namespace DemoFoundSimilarPicture
         }
 
         # endregion
+
+        # region Get Thumbnail Bitmap
+
+        public static Bitmap getThumbnailImage(string oldImagePath, int newWidth, int newHeight)
+        {
+            string originalFilename = oldImagePath;
+
+            //从文件取得图片对象
+            Image image = Image.FromFile(originalFilename);
+
+            //取得图片大小
+            Size size = new Size(newWidth, newHeight);
+
+            //新建一个bmp图片
+            Bitmap bitmap = new Bitmap(size.Width, size.Height);
+
+            //新建一个画板
+            System.Drawing.Graphics g = System.Drawing.Graphics.FromImage(bitmap);
+
+            //设置高质量插值法
+            g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.High;
+
+            //设置高质量,低速度呈现平滑程度
+            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+
+            //清空一下画布
+            g.Clear(Color.Transparent);
+
+            //在指定位置画图
+            g.DrawImage(image, new Rectangle(0, 0, bitmap.Width, bitmap.Height), new Rectangle(0, 0, image.Width, image.Height), GraphicsUnit.Pixel);
+            image.Dispose();
+
+            //释放
+            image.Dispose();
+            g.Dispose();
+
+            return bitmap;
+        }
+
+    # endregion
 
         # region Save Bitmap
 
