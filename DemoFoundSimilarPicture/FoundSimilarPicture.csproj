@@ -62,20 +62,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AverageHashFingerPrintBLL.cs" />
-    <Compile Include="CommonUtils.cs" />
-    <Compile Include="DifferenceHashFingerPrintBLL.cs" />
-    <Compile Include="FileUtils.cs" />
+    <Compile Include="BLL\AverageHashFingerPrintBLL.cs" />
+    <Compile Include="Utils\CommonUtils.cs" />
+    <Compile Include="BLL\DifferenceHashFingerPrintBLL.cs" />
+    <Compile Include="Utils\FileUtils.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormUtils.cs" />
-    <Compile Include="HashFingerPrintBLL.cs" />
-    <Compile Include="ImageHelper.cs" />
-    <Compile Include="PerceptionHashFingerPrintBLL.cs" />
+    <Compile Include="Utils\FormUtils.cs" />
+    <Compile Include="BLL\HashFingerPrintBLL.cs" />
+    <Compile Include="Utils\ImageHelper.cs" />
+    <Compile Include="BLL\PerceptionHashFingerPrintBLL.cs" />
     <Compile Include="TestClassifyGet.cs" />
     <Compile Include="TestGetImageThumbnail.cs" />
     <Compile Include="TestImageThumbnail.cs" />

@@ -19,8 +19,7 @@ namespace DemoFoundSimilarPicture
     {
         public static void test(string sourcePath, string targetPath)
         {
-
-            Bitmap bitmap = ImageHelper.getThumbnailBitmap3(sourcePath, 8, 8);
+            Bitmap bitmap = ImageHelper.getThumbnailBitmap3(sourcePath, 32, 32);
             ImageHelper.saveBitmap(bitmap, targetPath);
         }
     }
