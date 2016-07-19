@@ -2,7 +2,7 @@
 
 ** Author:      Q-WHai
 ** Create Date: 2016/7/15 14:23:07
-** Last Modify: 2016/7/15 14:23:07
+** Last Modify: 2016/7/19
 ** desc：       尚未编写描述
 ** Ver.:        V0.1.0
 
@@ -374,28 +374,6 @@ namespace DemoFoundSimilarPicture
             }
             m = m / pixels.Length;
             return (int)m;
-        }
-
-        # endregion
-
-        # region 计算比较的后的像素标识
-
-        public static int[] getComparedPixels(int[] pixels, int width, int height, int averagePixel)
-        {
-            int[] comparedPixels = new int[width * height];
-            for (int i = 0; i < comparedPixels.Length; i++)
-            {
-                if (pixels[i] >= averagePixel)
-                {
-                    comparedPixels[i] = 1;
-                }
-                else
-                {
-                    comparedPixels[i] = 0;
-                }
-            }
-
-            return comparedPixels;
         }
 
         # endregion

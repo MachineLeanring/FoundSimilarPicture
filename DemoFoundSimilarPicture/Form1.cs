@@ -51,5 +51,13 @@ namespace DemoFoundSimilarPicture
 
             new TestClassifyGet().testMoreImages(samplesPath, testFolderFullName);
         }
+
+        private void perceptionHashFingerPrintButton_Click(object sender, EventArgs e)
+        {
+            string fileFullName = FormUtils.getOpenFileDialogReturnFileName();
+            HashFingerPrintBLL bll = new PerceptionHashFingerPrintBLL();
+            string fingerPrint = bll.getImageFingerPrint(fileFullName, 32, 32);
+            MessageBox.Show(String.Concat("图片 ", fileFullName, " 的指纹是： ", fingerPrint));
+        }
     }
 }
