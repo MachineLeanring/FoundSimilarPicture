@@ -11,7 +11,8 @@ namespace DemoFoundSimilarPicture
         public void testSingleImage(string samplesPath, string testImagePath)
         {
             Dictionary<string, List<string>> sampleFingerPrintDict = getFingerPrintDict(samplesPath);
-            string testImageFingerPrint = ImageHelper.getImageFingerPrint(testImagePath, 8, 8);
+            HashFingerPrintBLL bll = new AverageHashFingerPrintBLL();
+            string testImageFingerPrint = bll.getImageFingerPrint(testImagePath, 8, 8);
 
             string classify = getClassifyBaseonMin(sampleFingerPrintDict, testImageFingerPrint);
             MessageBox.Show("图片" + testImagePath + "的分类结果为：\n" + classify);
@@ -98,7 +99,8 @@ namespace DemoFoundSimilarPicture
             FileInfo[] fileInfos = FileUtils.getAllSubFile(testImagePath);
             foreach (FileInfo fileInfo in fileInfos)
             {
-                string fingerPrint = ImageHelper.getImageFingerPrint(fileInfo.FullName, 8, 8);
+                HashFingerPrintBLL bll = new AverageHashFingerPrintBLL();
+                string fingerPrint = bll.getImageFingerPrint(fileInfo.FullName, 8, 8);
                 testImageFingerPrintDict.Add(fileInfo.Name, fingerPrint);
             }
 
@@ -116,7 +118,8 @@ namespace DemoFoundSimilarPicture
                 List<string> fingerPrints = new List<string>();
                 foreach (FileInfo fileInfo in fileInfos)
                 {
-                    string fingerPrint = ImageHelper.getImageFingerPrint(fileInfo.FullName, 8, 8);
+                    HashFingerPrintBLL bll = new AverageHashFingerPrintBLL();
+                    string fingerPrint = bll.getImageFingerPrint(fileInfo.FullName, 8, 8);
                     fingerPrints.Add(fingerPrint);
                 }
                 fingerPrintDict.Add(directoryInfo.Name, fingerPrints);

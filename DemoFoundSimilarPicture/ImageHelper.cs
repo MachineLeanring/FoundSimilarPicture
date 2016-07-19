@@ -29,28 +29,6 @@ namespace DemoFoundSimilarPicture
             Right
         }
 
-        # region 计算图片指纹
-
-        public static string getImageFingerPrint(string imageFileFullName, int targetWidth, int targetHight)
-        {
-            // 第一步，缩小尺寸
-            Bitmap thumbnailBitmap = getThumbnailBitmap3(imageFileFullName, targetWidth, targetHight);
-
-            // 第二步，简化色彩
-            int[] pixels = getSimplifyPixels(targetWidth, targetHight, thumbnailBitmap);
-
-            // 第三步，计算平均值
-            int averagePixel = average(pixels);
-
-            // 第四步，比较像素的灰度
-            int[] comparedPixels = getComparedPixels(pixels, targetWidth, targetHight, averagePixel);
-
-            // 第五步，计算哈希值
-            return getFingerPrintHashCode(comparedPixels);
-        }
-
-        # endregion
-
         # region Save Thumbnail
 
         /// <summary>
@@ -346,7 +324,7 @@ namespace DemoFoundSimilarPicture
         /// <param name="height">图片高</param>
         /// <param name="bitmap">图片</param>
         /// <returns>简化后的色彩值</returns>
-        private static int[] getSimplifyPixels(int width, int height, Bitmap bitmap)
+        public static int[] getSimplifyPixels(int width, int height, Bitmap bitmap)
         {
 
             int[] pixels = new int[width * height];
@@ -402,7 +380,7 @@ namespace DemoFoundSimilarPicture
 
         # region 计算比较的后的像素标识
 
-        private static int[] getComparedPixels(int[] pixels, int width, int height, int averagePixel)
+        public static int[] getComparedPixels(int[] pixels, int width, int height, int averagePixel)
         {
             int[] comparedPixels = new int[width * height];
             for (int i = 0; i < comparedPixels.Length; i++)

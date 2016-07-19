@@ -21,7 +21,8 @@ namespace DemoFoundSimilarPicture
         public static void testFoundSimilarPicture(string origionalImageFileFullName, string samplesImageFolderFullName)
         {
             StringBuilder showBuilder = new StringBuilder();
-            string origionalImageFingerPrint = ImageHelper.getImageFingerPrint(origionalImageFileFullName, 8, 8);
+            HashFingerPrintBLL bll = new AverageHashFingerPrintBLL();
+            string origionalImageFingerPrint = bll.getImageFingerPrint(origionalImageFileFullName, 8, 8);
             
             string[] pathSegments = origionalImageFileFullName.Split(new Char[] { '\\' });
             showBuilder.Append(string.Concat("原图片: ", pathSegments[pathSegments.Length - 1], ", 指纹: ", origionalImageFingerPrint, "\n\n"));
@@ -29,7 +30,7 @@ namespace DemoFoundSimilarPicture
             FileInfo[] sampleFileInfos = FileUtils.getAllSubFile(samplesImageFolderFullName);
             foreach (FileInfo sampleFileInfo in sampleFileInfos)
             {
-                string sampleImageFingerPrint = ImageHelper.getImageFingerPrint(sampleFileInfo.FullName, 8, 8);
+                string sampleImageFingerPrint = bll.getImageFingerPrint(sampleFileInfo.FullName, 8, 8);
                 int distance = CommonUtils.hammingDistance(origionalImageFingerPrint, sampleImageFingerPrint);
                 showBuilder.Append(string.Concat("样本 ", sampleFileInfo.Name, " 的指纹: ", origionalImageFingerPrint, "\n"));
                 showBuilder.Append(string.Concat("与原图的距离: ", distance, " 判定结果为 ", getJudgment(distance), "\n\n"));

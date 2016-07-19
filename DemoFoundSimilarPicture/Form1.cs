@@ -27,7 +27,8 @@ namespace DemoFoundSimilarPicture
         private void fingerPrintButton_Click(object sender, EventArgs e)
         {
             string fileFullName = FormUtils.getOpenFileDialogReturnFileName();
-            string fingerPrint = ImageHelper.getImageFingerPrint(fileFullName, 8, 8);
+            HashFingerPrintBLL bll = new AverageHashFingerPrintBLL();
+            string fingerPrint = bll.getImageFingerPrint(fileFullName, 8, 8);
             MessageBox.Show(String.Concat("图片 ", fileFullName, " 的指纹是： ", fingerPrint));
         }
 

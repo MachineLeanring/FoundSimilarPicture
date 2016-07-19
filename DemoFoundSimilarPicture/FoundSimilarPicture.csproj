@@ -62,7 +62,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AverageHashFingerPrintBLL.cs" />
     <Compile Include="CommonUtils.cs" />
+    <Compile Include="DifferenceHashFingerPrintBLL.cs" />
     <Compile Include="FileUtils.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -71,7 +73,9 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="FormUtils.cs" />
+    <Compile Include="HashFingerPrintBLL.cs" />
     <Compile Include="ImageHelper.cs" />
+    <Compile Include="PerceptionHashFingerPrintBLL.cs" />
     <Compile Include="TestClassifyGet.cs" />
     <Compile Include="TestGetImageThumbnail.cs" />
     <Compile Include="TestImageThumbnail.cs" />
