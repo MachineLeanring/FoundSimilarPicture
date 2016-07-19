@@ -14,7 +14,7 @@ namespace DemoFoundSimilarPicture
         private void compressButtonClick(object sender, EventArgs e)
         {
             string targetPath = ImageHelper.ROOTPATH + @"..\..\images\compress\thumbnail.jpg";
-            TestGetImageThumbnail.test(getOpenFileDialogReturnFileName(), targetPath);
+            TestGetImageThumbnail.test(FormUtils.getOpenFileDialogReturnFileName(), targetPath);
             MessageBox.Show(string.Concat(@"图片已压缩，压缩后的图片路径为: ", targetPath));
         }
 
@@ -26,58 +26,29 @@ namespace DemoFoundSimilarPicture
 
         private void fingerPrintButton_Click(object sender, EventArgs e)
         {
-            string fileFullName = getOpenFileDialogReturnFileName();
+            string fileFullName = FormUtils.getOpenFileDialogReturnFileName();
             string fingerPrint = ImageHelper.getImageFingerPrint(fileFullName, 8, 8);
             MessageBox.Show(String.Concat("图片 ", fileFullName, " 的指纹是： ", fingerPrint));
         }
 
         private void imageSimilarMatchButtonClick(object sender, EventArgs e)
         {
-            TestFoundSimiarPicture.testFoundSimilarPicture(ImageHelper.ROOTPATH + @"..\..\images\part-lol\lol-result-v-0.jpg", ImageHelper.ROOTPATH + @"..\..\images\part-lol");
+            TestFoundSimiarPicture.testFoundSimilarPicture(ImageHelper.ROOTPATH + @"..\..\images\original\original.jpg", ImageHelper.ROOTPATH + @"..\..\images\samples");
         }
 
         private void classifyGetButton_Click(object sender, EventArgs e)
         {
             string samplesPath = ImageHelper.ROOTPATH + @"..\..\images\LOL\";
 
-            new TestClassifyGet().testSingleImage(samplesPath, getOpenFileDialogReturnFileName());
+            new TestClassifyGet().testSingleImage(samplesPath, FormUtils.getOpenFileDialogReturnFileName());
         }
 
         private void classifyGetMoreButton_Click(object sender, EventArgs e)
         {
             string samplesPath = ImageHelper.ROOTPATH + @"..\..\images\LOL\";
-            string testFolderFullName = getOpenFolderDialogReturnFolderName();
+            string testFolderFullName = FormUtils.getOpenFolderDialogReturnFolderName();
 
             new TestClassifyGet().testMoreImages(samplesPath, testFolderFullName);
-        }
-
-        private string getOpenFileDialogReturnFileName()
-        {
-            OpenFileDialog opdialog = new OpenFileDialog();
-            string fileFullName = string.Empty;
-            if (opdialog.ShowDialog() == DialogResult.OK)
-            {
-                Stream stream = null;
-                if ((stream = opdialog.OpenFile()) != null)
-                {
-                    fileFullName = opdialog.FileName;
-                    stream.Dispose();
-                }
-            }
-
-            return fileFullName;
-        }
-
-        private string getOpenFolderDialogReturnFolderName()
-        {
-            string folderFullName = string.Empty;
-            FolderBrowserDialog dialog = new FolderBrowserDialog();
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                folderFullName = dialog.SelectedPath;
-            }
-
-            return folderFullName;
         }
     }
 }

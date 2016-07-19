@@ -70,6 +70,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormUtils.cs" />
     <Compile Include="ImageHelper.cs" />
     <Compile Include="TestClassifyGet.cs" />
     <Compile Include="TestGetImageThumbnail.cs" />
@@ -103,8 +104,14 @@
     <Folder Include="images\compress\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\LOL\Defeat\d-2.jpg" />
     <Content Include="images\LOL\Defeat\d-1.jpg" />
     <Content Include="images\LOL\Defeat\d-0.jpg" />
+    <Content Include="images\LOL\Victory\v-8.jpg" />
+    <Content Include="images\LOL\Victory\v-7.jpg" />
+    <Content Include="images\LOL\Victory\v-4.jpg" />
+    <Content Include="images\LOL\Victory\v-5.jpg" />
+    <Content Include="images\LOL\Victory\v-6.jpg" />
     <Content Include="images\LOL\Victory\v-0.jpg" />
     <Content Include="images\LOL\Victory\v-1.jpg" />
     <Content Include="images\LOL\Victory\v-2.jpg" />
