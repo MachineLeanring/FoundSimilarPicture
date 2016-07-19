@@ -38,11 +38,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.classifyGetMoreButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // compressButton
             // 
-            this.compressButton.Location = new System.Drawing.Point(205, 45);
+            this.compressButton.Location = new System.Drawing.Point(205, 28);
             this.compressButton.Name = "compressButton";
             this.compressButton.Size = new System.Drawing.Size(60, 30);
             this.compressButton.TabIndex = 0;
@@ -52,7 +54,7 @@
             // 
             // imageSimilarMatchButton
             // 
-            this.imageSimilarMatchButton.Location = new System.Drawing.Point(205, 193);
+            this.imageSimilarMatchButton.Location = new System.Drawing.Point(205, 176);
             this.imageSimilarMatchButton.Name = "imageSimilarMatchButton";
             this.imageSimilarMatchButton.Size = new System.Drawing.Size(60, 30);
             this.imageSimilarMatchButton.TabIndex = 1;
@@ -62,7 +64,7 @@
             // 
             // fingerPrintButton
             // 
-            this.fingerPrintButton.Location = new System.Drawing.Point(205, 147);
+            this.fingerPrintButton.Location = new System.Drawing.Point(205, 130);
             this.fingerPrintButton.Name = "fingerPrintButton";
             this.fingerPrintButton.Size = new System.Drawing.Size(60, 30);
             this.fingerPrintButton.TabIndex = 2;
@@ -72,7 +74,7 @@
             // 
             // compressButton2
             // 
-            this.compressButton2.Location = new System.Drawing.Point(205, 97);
+            this.compressButton2.Location = new System.Drawing.Point(205, 80);
             this.compressButton2.Name = "compressButton2";
             this.compressButton2.Size = new System.Drawing.Size(60, 30);
             this.compressButton2.TabIndex = 3;
@@ -82,7 +84,7 @@
             // 
             // classifyGetButton
             // 
-            this.classifyGetButton.Location = new System.Drawing.Point(205, 240);
+            this.classifyGetButton.Location = new System.Drawing.Point(205, 223);
             this.classifyGetButton.Margin = new System.Windows.Forms.Padding(2);
             this.classifyGetButton.Name = "classifyGetButton";
             this.classifyGetButton.Size = new System.Drawing.Size(60, 30);
@@ -94,7 +96,7 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(12, 50);
+            this.label1.Location = new System.Drawing.Point(12, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(112, 20);
             this.label1.TabIndex = 5;
@@ -103,7 +105,7 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(12, 152);
+            this.label2.Location = new System.Drawing.Point(12, 135);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(128, 20);
             this.label2.TabIndex = 6;
@@ -113,7 +115,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(12, 102);
+            this.label3.Location = new System.Drawing.Point(12, 85);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(128, 16);
             this.label3.TabIndex = 7;
@@ -123,7 +125,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(12, 198);
+            this.label4.Location = new System.Drawing.Point(12, 181);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(168, 16);
             this.label4.TabIndex = 8;
@@ -133,17 +135,39 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(12, 245);
+            this.label5.Location = new System.Drawing.Point(12, 228);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(168, 16);
             this.label5.TabIndex = 9;
             this.label5.Text = "判定图片的分类结果：";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label6.Location = new System.Drawing.Point(12, 274);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(152, 16);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "批量测试分类结果：";
+            // 
+            // classifyGetMoreButton
+            // 
+            this.classifyGetMoreButton.Location = new System.Drawing.Point(205, 269);
+            this.classifyGetMoreButton.Name = "classifyGetMoreButton";
+            this.classifyGetMoreButton.Size = new System.Drawing.Size(60, 30);
+            this.classifyGetMoreButton.TabIndex = 11;
+            this.classifyGetMoreButton.Text = "浏览";
+            this.classifyGetMoreButton.UseVisualStyleBackColor = true;
+            this.classifyGetMoreButton.Click += new System.EventHandler(this.classifyGetMoreButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(301, 314);
+            this.ClientSize = new System.Drawing.Size(287, 316);
+            this.Controls.Add(this.classifyGetMoreButton);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -175,6 +199,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button classifyGetMoreButton;
     }
 }
 

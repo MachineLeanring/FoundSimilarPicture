@@ -8,13 +8,28 @@ namespace DemoFoundSimilarPicture
 {
     public class TestClassifyGet
     {
-        public void execute(string samplesPath, string testImagePath)
+        public void testSingleImage(string samplesPath, string testImagePath)
         {
-            Dictionary<string, List<string>> fingerPrintDict = getFingerPrintDict(samplesPath);
+            Dictionary<string, List<string>> sampleFingerPrintDict = getFingerPrintDict(samplesPath);
             string testImageFingerPrint = ImageHelper.getImageFingerPrint(testImagePath, 8, 8);
 
-            string classify = getClassify(fingerPrintDict, testImageFingerPrint);
+            string classify = getClassify(sampleFingerPrintDict, testImageFingerPrint);
             MessageBox.Show("图片" + testImagePath + "的分类结果为：\n" + classify);
+        }
+
+        public void testMoreImages(string samplesPath, string testImagePath)
+        {
+            Dictionary<string, List<string>> sampleFingerPrintDict = getFingerPrintDict(samplesPath);
+            Dictionary<string, string> testImageFingerPrintDict = getTestImageFingerPrintDict(testImagePath);
+
+            StringBuilder builder = new StringBuilder();
+            foreach (var testItem in testImageFingerPrintDict)
+            {
+                string classify = getClassify(sampleFingerPrintDict, testItem.Value);
+                builder.Append(string.Concat("图片", testItem.Key, "的判别结果为：", classify, "\n"));
+            }
+
+            MessageBox.Show(builder.ToString());
         }
 
         private string getClassify(Dictionary<string, List<string>> fingerPrintDict, string testImageFingerPrint)
@@ -43,6 +58,19 @@ namespace DemoFoundSimilarPicture
             }
 
             return classify;
+        }
+
+        private Dictionary<string, string> getTestImageFingerPrintDict(string testImagePath)
+        {
+            Dictionary<string, string> testImageFingerPrintDict = new Dictionary<string, string>();
+            FileInfo[] fileInfos = FileUtils.getAllSubFile(testImagePath);
+            foreach (FileInfo fileInfo in fileInfos)
+            {
+                string fingerPrint = ImageHelper.getImageFingerPrint(fileInfo.FullName, 8, 8);
+                testImageFingerPrintDict.Add(fileInfo.Name, fingerPrint);
+            }
+
+            return testImageFingerPrintDict;
         }
 
         private Dictionary<string, List<string>> getFingerPrintDict(string samplesPath)

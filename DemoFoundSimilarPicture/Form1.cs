@@ -39,7 +39,16 @@ namespace DemoFoundSimilarPicture
         private void classifyGetButton_Click(object sender, EventArgs e)
         {
             string samplesPath = ImageHelper.ROOTPATH + @"..\..\images\LOL\";
-            new TestClassifyGet().execute(samplesPath, getOpenFileDialogReturnFileName());
+
+            new TestClassifyGet().testSingleImage(samplesPath, getOpenFileDialogReturnFileName());
+        }
+
+        private void classifyGetMoreButton_Click(object sender, EventArgs e)
+        {
+            string samplesPath = ImageHelper.ROOTPATH + @"..\..\images\LOL\";
+            string testFolderFullName = getOpenFolderDialogReturnFolderName();
+
+            new TestClassifyGet().testMoreImages(samplesPath, testFolderFullName);
         }
 
         private string getOpenFileDialogReturnFileName()
@@ -48,21 +57,27 @@ namespace DemoFoundSimilarPicture
             string fileFullName = string.Empty;
             if (opdialog.ShowDialog() == DialogResult.OK)
             {
-                Stream ms = null;
-                byte[] picbyte = null;
-                if ((ms = opdialog.OpenFile()) != null)
+                Stream stream = null;
+                if ((stream = opdialog.OpenFile()) != null)
                 {
-                    picbyte = new byte[ms.Length];
-                    ms.Position = 0;
-                    ms.Read(picbyte, 0, Convert.ToInt32(ms.Length));
-
                     fileFullName = opdialog.FileName;
-
-                    ms.Dispose();
+                    stream.Dispose();
                 }
             }
 
             return fileFullName;
+        }
+
+        private string getOpenFolderDialogReturnFolderName()
+        {
+            string folderFullName = string.Empty;
+            FolderBrowserDialog dialog = new FolderBrowserDialog();
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                folderFullName = dialog.SelectedPath;
+            }
+
+            return folderFullName;
         }
     }
 }
