@@ -34,6 +34,12 @@ namespace DemoFoundSimilarPicture
                      }
                  }
             }
+
+            if (minDistance > 5)
+            {
+                classify = "无法判定";
+            }
+
             return classify;
         }
 

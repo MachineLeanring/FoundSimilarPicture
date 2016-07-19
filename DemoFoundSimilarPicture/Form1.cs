@@ -38,8 +38,8 @@ namespace DemoFoundSimilarPicture
 
         private void classifyGetButton_Click(object sender, EventArgs e)
         {
-            string samplesPath = @"D:\Code\CS\Demo\Picture\FoundSimilarPicture\DemoFoundSimilarPicture\images\LOL\";
-            string testImagePath = @"D:\Code\CS\Demo\Picture\FoundSimilarPicture\DemoFoundSimilarPicture\images\LOL\Victory\v-0.jpg";
+            string samplesPath = ImageHelper.ROOTPATH + @"..\..\images\LOL\";
+            string testImagePath = ImageHelper.ROOTPATH + @"..\..\images\part-lol\lol-result-v-6.jpg";
             new TestClassifyGet().execute(samplesPath, testImagePath);
         }
     }
