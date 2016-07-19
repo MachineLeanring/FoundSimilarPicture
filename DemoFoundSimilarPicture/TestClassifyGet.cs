@@ -13,7 +13,7 @@ namespace DemoFoundSimilarPicture
             Dictionary<string, List<string>> sampleFingerPrintDict = getFingerPrintDict(samplesPath);
             string testImageFingerPrint = ImageHelper.getImageFingerPrint(testImagePath, 8, 8);
 
-            string classify = getClassify(sampleFingerPrintDict, testImageFingerPrint);
+            string classify = getClassifyBaseonMin(sampleFingerPrintDict, testImageFingerPrint);
             MessageBox.Show("图片" + testImagePath + "的分类结果为：\n" + classify);
         }
 
@@ -25,14 +25,14 @@ namespace DemoFoundSimilarPicture
             StringBuilder builder = new StringBuilder();
             foreach (var testItem in testImageFingerPrintDict)
             {
-                string classify = getClassify(sampleFingerPrintDict, testItem.Value);
+                string classify = getClassifyBaseonMin(sampleFingerPrintDict, testItem.Value);
                 builder.Append(string.Concat("图片", testItem.Key, "的判别结果为：", classify, "\n"));
             }
 
             MessageBox.Show(builder.ToString());
         }
 
-        private string getClassify(Dictionary<string, List<string>> fingerPrintDict, string testImageFingerPrint)
+        private string getClassifyBaseonMin(Dictionary<string, List<string>> fingerPrintDict, string testImageFingerPrint)
         {
             int minDistance = int.MaxValue;
             string classify = string.Empty;
@@ -50,9 +50,41 @@ namespace DemoFoundSimilarPicture
                  }
             }
 
-            // MessageBox.Show("d = " + minDistance);
+            //MessageBox.Show("d = " + minDistance);
 
             if (minDistance >= 5)
+            {
+                classify = "无法判定";
+            }
+
+            return classify;
+        }
+
+        private string getClassifyBaseonAverage(Dictionary<string, List<string>> fingerPrintDict, string testImageFingerPrint)
+        {
+            double minAverageDistance = double.MaxValue;
+            string classify = string.Empty;
+            foreach (var item in fingerPrintDict)
+            {
+                int sumDistance = 0;
+                List<string> fingerPrints = item.Value;
+                foreach (string fingerPrint in fingerPrints)
+                {
+                    int distance = CommonUtils.hammingDistance(fingerPrint, testImageFingerPrint);
+                    sumDistance += distance;
+                }
+
+                double averageDistance = 1.0 * sumDistance / fingerPrints.Count;
+                if (averageDistance < minAverageDistance)
+                {
+                    minAverageDistance = averageDistance;
+                    classify = item.Key;
+                }
+            }
+
+            MessageBox.Show("d = " + minAverageDistance);
+
+            if (minAverageDistance >= 10.0)
             {
                 classify = "无法判定";
             }

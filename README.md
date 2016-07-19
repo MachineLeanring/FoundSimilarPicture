@@ -1,5 +1,5 @@
 # FoundSimilarPicture
-Found similar picture based on image hash finger print.
+Found similar picture based on image average hash finger print.
 Programming language = C#
 
 ------------------------
