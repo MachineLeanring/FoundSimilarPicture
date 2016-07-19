@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace DemoFoundSimilarPicture
@@ -12,10 +13,8 @@ namespace DemoFoundSimilarPicture
 
         private void compressButtonClick(object sender, EventArgs e)
         {
-            string sourcePath = ImageHelper.ROOTPATH + @"..\..\images\part-lol\lol-result-v-0.jpg";
             string targetPath = ImageHelper.ROOTPATH + @"..\..\images\compress\thumbnail.jpg";
-            // ImageHelper.saveThumbnail(sourcePath, targetPath, 200, 200, 100);
-            TestGetImageThumbnail.test(sourcePath, targetPath);
+            TestGetImageThumbnail.test(getOpenFileDialogReturnFileName(), targetPath);
             MessageBox.Show(string.Concat(@"图片已压缩，压缩后的图片路径为: ", targetPath));
         }
 
@@ -27,9 +26,9 @@ namespace DemoFoundSimilarPicture
 
         private void fingerPrintButton_Click(object sender, EventArgs e)
         {
-            string imagePath = ImageHelper.ROOTPATH + @"..\..\images\original\original.jpg";
-            string fingerPrint = ImageHelper.getImageFingerPrint(imagePath, 8, 8);
-            MessageBox.Show(String.Concat("图片 ", imagePath, " 的指纹是： ", fingerPrint));
+            string fileFullName = getOpenFileDialogReturnFileName();
+            string fingerPrint = ImageHelper.getImageFingerPrint(fileFullName, 8, 8);
+            MessageBox.Show(String.Concat("图片 ", fileFullName, " 的指纹是： ", fingerPrint));
         }
 
         private void imageSimilarMatchButtonClick(object sender, EventArgs e)
@@ -40,8 +39,30 @@ namespace DemoFoundSimilarPicture
         private void classifyGetButton_Click(object sender, EventArgs e)
         {
             string samplesPath = ImageHelper.ROOTPATH + @"..\..\images\LOL\";
-            string testImagePath = ImageHelper.ROOTPATH + @"..\..\images\part-lol\lol-result-v-0.jpg";
-            new TestClassifyGet().execute(samplesPath, testImagePath);
+            new TestClassifyGet().execute(samplesPath, getOpenFileDialogReturnFileName());
+        }
+
+        private string getOpenFileDialogReturnFileName()
+        {
+            OpenFileDialog opdialog = new OpenFileDialog();
+            string fileFullName = string.Empty;
+            if (opdialog.ShowDialog() == DialogResult.OK)
+            {
+                Stream ms = null;
+                byte[] picbyte = null;
+                if ((ms = opdialog.OpenFile()) != null)
+                {
+                    picbyte = new byte[ms.Length];
+                    ms.Position = 0;
+                    ms.Read(picbyte, 0, Convert.ToInt32(ms.Length));
+
+                    fileFullName = opdialog.FileName;
+
+                    ms.Dispose();
+                }
+            }
+
+            return fileFullName;
         }
     }
 }

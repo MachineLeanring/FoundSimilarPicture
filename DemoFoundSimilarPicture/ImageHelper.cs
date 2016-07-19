@@ -34,7 +34,7 @@ namespace DemoFoundSimilarPicture
         public static string getImageFingerPrint(string imageFileFullName, int targetWidth, int targetHight)
         {
             // 第一步，缩小尺寸
-            Bitmap thumbnailBitmap = getThumbnailImage(imageFileFullName, targetWidth, targetHight);
+            Bitmap thumbnailBitmap = getThumbnailBitmap3(imageFileFullName, targetWidth, targetHight);
 
             // 第二步，简化色彩
             int[] pixels = getSimplifyPixels(targetWidth, targetHight, thumbnailBitmap);
@@ -140,7 +140,8 @@ namespace DemoFoundSimilarPicture
         # endregion
 
         # region Get Thumbnail Bitmap
-        public static Bitmap getThumbnail(string originalImageFullName, int targetWidth, int targetHeight)
+
+        public static Bitmap getThumbnailBitmap1(string originalImageFullName, int targetWidth, int targetHeight)
         {
             Image iSource = Image.FromFile(originalImageFullName);
             ImageFormat tFormat = iSource.RawFormat;
@@ -182,7 +183,7 @@ namespace DemoFoundSimilarPicture
 
         # region Get Thumbnail Bitmap
 
-        public static Bitmap getImageThumbnail(string originalImageFullName, int targetWidth, int targetHeight, AnchorPosition Anchor)
+        public static Bitmap getThumbnailBitmap2(string originalImageFullName, int targetWidth, int targetHeight, AnchorPosition Anchor)
         {
             Image imgPhoto = Image.FromFile(originalImageFullName);
             int sourceWidth = imgPhoto.Width;
@@ -255,7 +256,7 @@ namespace DemoFoundSimilarPicture
 
         # region Get Thumbnail Bitmap
 
-        public static Bitmap getThumbnailImage(string oldImagePath, int newWidth, int newHeight)
+        public static Bitmap getThumbnailBitmap3(string oldImagePath, int newWidth, int newHeight)
         {
             string originalFilename = oldImagePath;
 

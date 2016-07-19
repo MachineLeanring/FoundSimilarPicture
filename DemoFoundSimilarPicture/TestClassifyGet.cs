@@ -35,7 +35,7 @@ namespace DemoFoundSimilarPicture
                  }
             }
 
-            MessageBox.Show("d = " + minDistance);
+            // MessageBox.Show("d = " + minDistance);
 
             if (minDistance >= 5)
             {
