@@ -2,7 +2,7 @@
 
 ** Author:      Q-WHai
 ** Create Date: 2016‎/‎5‎/‎20
-** Last Modify: 2016/6/8
+** Last Modify: 2016/7/20
 ** desc：       这是一个与文件操作相关的工具类
 ** Ver.:        V0.1.2
 
@@ -14,7 +14,7 @@ using System.Text;
 using System.IO;
 using System.Collections;
 
-namespace DemoFoundSimilarPicture.Utils
+namespace FoundSimilarPicture.Utils
 {
     public class FileUtils
     {

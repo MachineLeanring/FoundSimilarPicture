@@ -14,9 +14,9 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-using DemoFoundSimilarPicture.Utils;
+using FoundSimilarPicture.Utils;
 
-namespace DemoFoundSimilarPicture.BLL
+namespace FoundSimilarPicture.BLL
 {
     public class PerceptionHashFingerPrintBLL : HashFingerPrintBLL
     {

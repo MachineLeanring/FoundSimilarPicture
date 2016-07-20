@@ -15,7 +15,7 @@ using System.Text;
 using System.Drawing.Drawing2D;
 using System.Runtime.InteropServices;
 
-namespace DemoFoundSimilarPicture.Utils
+namespace FoundSimilarPicture.Utils
 {
     public class ImageHelper
     {
@@ -273,49 +273,6 @@ namespace DemoFoundSimilarPicture.Utils
 
         # endregion
 
-        # region Save Bitmap
-
-        public static bool saveBitmap(Bitmap bitmap, string targetFileFullName)
-        {
-            EncoderParameters ep = new EncoderParameters();
-            long[] qy = new long[1];
-            qy[0] = 100; // 设置压缩的比例 1-100
-            EncoderParameter eParam = new EncoderParameter(System.Drawing.Imaging.Encoder.Quality, qy);
-            ep.Param[0] = eParam;
-            try
-            {
-                ImageCodecInfo[] arrayICI = ImageCodecInfo.GetImageEncoders();
-                ImageCodecInfo jpegICIinfo = null;
-                for (int x = 0; x < arrayICI.Length; x++)
-                {
-                    if (arrayICI[x].FormatDescription.Equals("JPEG"))
-                    {
-                        jpegICIinfo = arrayICI[x];
-                        break;
-                    }
-                }
-                if (jpegICIinfo != null)
-                {
-                    bitmap.Save(targetFileFullName, jpegICIinfo, ep); // targetImageFullName 是压缩后的新路径
-                }
-                else
-                {
-                    //
-                }
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-            finally
-            {
-                bitmap.Dispose();
-            }
-        }
-
-        # endregion
-
         # region 简化色彩
 
         /// <summary>
@@ -459,14 +416,53 @@ namespace DemoFoundSimilarPicture.Utils
 
         # region 剪切图片
 
-        public static Bitmap cropImage(Bitmap bitmap, Rectangle section)
+        /// <summary>  
+        /// 剪裁 -- 用GDI+   
+        /// </summary>  
+        /// <param name="bitmap">原始Bitmap</param>  
+        /// <param name="StartX">开始坐标X</param>  
+        /// <param name="StartY">开始坐标Y</param>  
+        /// <param name="targetWidth">宽度</param>  
+        /// <param name="targetHeight">高度</param>  
+        /// <returns>剪裁后的Bitmap</returns>  
+        public static Bitmap cropImage(Bitmap bitmap, int StartX, int StartY, int targetWidth, int targetHeight)
         {
-            Bitmap resultBitmap = new Bitmap(section.Width, section.Height);
+            if (bitmap == null)
+            {
+                return null;
+            }
 
-            Graphics graphics = Graphics.FromImage(resultBitmap);
-            graphics.DrawImage(bitmap, 0, 0, section, GraphicsUnit.Pixel);
+            int sourceWidth = bitmap.Width;
+            int sourceHeight = bitmap.Height;
 
-            return resultBitmap;
+            if (StartX >= sourceWidth || StartY >= sourceHeight)
+            {
+                return null;
+            }
+
+            if (StartX + targetWidth > sourceWidth)
+            {
+                targetWidth = sourceWidth - StartX;
+            }
+
+            if (StartY + targetHeight > sourceHeight)
+            {
+                targetHeight = sourceHeight - StartY;
+            }
+
+            try
+            {
+                Bitmap resultBitmap = new Bitmap(targetWidth, targetHeight, PixelFormat.Format24bppRgb);
+                Graphics graphics = Graphics.FromImage(resultBitmap);
+                graphics.DrawImage(bitmap, new Rectangle(0, 0, targetWidth, targetHeight), new Rectangle(StartX, StartY, targetWidth, targetHeight), GraphicsUnit.Pixel);
+                graphics.Dispose();
+
+                return resultBitmap;
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         # endregion

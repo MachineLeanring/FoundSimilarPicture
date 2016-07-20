@@ -2,11 +2,11 @@
 using System.IO;
 using System.Windows.Forms;
 
-using DemoFoundSimilarPicture.BLL;
-using DemoFoundSimilarPicture.Utils;
-using DemoFoundSimilarPicture.Test;
+using FoundSimilarPicture.BLL;
+using FoundSimilarPicture.Utils;
+using FoundSimilarPicture.Test;
 
-namespace DemoFoundSimilarPicture
+namespace FoundSimilarPicture
 {
     public partial class MainForm : Form
     {

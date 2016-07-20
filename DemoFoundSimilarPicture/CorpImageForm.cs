@@ -1,4 +1,14 @@
-﻿using System;
+﻿/***********************************************************************
+
+** Author:      Q-WHai
+** Create Date: 2016/7/20
+** Last Modify: 2016/7/20
+** desc：       尚未编写描述
+** Ver.:        V0.1.0
+
+************************************************************************/
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,9 +17,9 @@ using System.Threading;
 using System.Text;
 using System.Windows.Forms;
 
-using DemoFoundSimilarPicture.Utils;
+using FoundSimilarPicture.Utils;
 
-namespace DemoFoundSimilarPicture
+namespace FoundSimilarPicture
 {
     public partial class CorpImageForm : Form
     {
@@ -36,10 +46,8 @@ namespace DemoFoundSimilarPicture
             int w = int.Parse(sizeWTextBox.Text);
             int h = int.Parse(sizeHTextBox.Text);
 
-            Bitmap sourceBitmap = new Bitmap(imageFileFullName);
-            Rectangle section = new Rectangle(new Point(x, y), new Size(w, h));
-
-            ImageHelper.saveBitmap(ImageHelper.cropImage(sourceBitmap, section), imageFileFullName + ".corp.jpg");
+            Bitmap corpImageBitmap = ImageHelper.cropImage(new Bitmap(imageFileFullName), x, y, w, h);
+            corpImageBitmap.Save(imageFileFullName + ".corp.jpg");
 
             MessageBox.Show("图片裁剪已完成，新图片路径：\n" + imageFileFullName + ".corp.jpg");
         }

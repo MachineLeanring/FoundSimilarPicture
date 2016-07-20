@@ -1,4 +1,4 @@
-﻿namespace DemoFoundSimilarPicture
+﻿namespace FoundSimilarPicture
 {
     partial class MainForm
     {

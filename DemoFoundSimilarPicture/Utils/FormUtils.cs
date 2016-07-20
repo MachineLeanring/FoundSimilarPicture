@@ -2,7 +2,7 @@
 
 ** Author:      Q-WHai
 ** Create Date: 2016/7/19 11:42:19
-** Last Modify: 2016/7/19
+** Last Modify: 2016/7/20
 ** desc：       尚未编写描述
 ** Ver.:        V0.1.0
 
@@ -14,7 +14,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Text;
 
-namespace DemoFoundSimilarPicture.Utils
+namespace FoundSimilarPicture.Utils
 {
     public class FormUtils
     {

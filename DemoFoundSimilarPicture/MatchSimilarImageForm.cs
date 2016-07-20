@@ -17,11 +17,11 @@ using System.Threading;
 using System.Text;
 using System.Windows.Forms;
 
-using DemoFoundSimilarPicture.BLL;
-using DemoFoundSimilarPicture.Model;
-using DemoFoundSimilarPicture.Utils;
+using FoundSimilarPicture.BLL;
+using FoundSimilarPicture.Model;
+using FoundSimilarPicture.Utils;
 
-namespace DemoFoundSimilarPicture
+namespace FoundSimilarPicture
 {
     public partial class MatchSimilarImageForm : Form
     {

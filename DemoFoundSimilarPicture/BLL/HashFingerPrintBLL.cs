@@ -13,9 +13,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using DemoFoundSimilarPicture.Utils;
+using FoundSimilarPicture.Utils;
 
-namespace DemoFoundSimilarPicture.BLL
+namespace FoundSimilarPicture.BLL
 {
     public abstract class HashFingerPrintBLL
     {

@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Drawing.Drawing2D;
 
-namespace DemoFoundSimilarPicture.Test
+namespace FoundSimilarPicture.Test
 {
 	class TestImageThumbnail
 	{

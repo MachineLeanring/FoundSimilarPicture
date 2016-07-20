@@ -13,7 +13,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Text;
 
-namespace DemoFoundSimilarPicture.Model
+namespace FoundSimilarPicture.Model
 {
     public class UpdateModel
     {

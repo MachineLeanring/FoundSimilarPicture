@@ -7,8 +7,8 @@
     <ProjectGuid>{41D7F5F9-6881-43DD-902C-E519B18C1DE9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DemoFoundSimilarPicture</RootNamespace>
-    <AssemblyName>DemoFoundSimilarPicture</AssemblyName>
+    <RootNamespace>FoundSimilarPicture</RootNamespace>
+    <AssemblyName>FoundSimilarPicture</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -113,6 +113,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -1,4 +1,4 @@
-﻿namespace DemoFoundSimilarPicture
+﻿namespace FoundSimilarPicture
 {
     partial class CorpImageForm
     {
@@ -105,6 +105,7 @@
             this.locationXTextBox.Name = "locationXTextBox";
             this.locationXTextBox.Size = new System.Drawing.Size(100, 21);
             this.locationXTextBox.TabIndex = 6;
+            this.locationXTextBox.Text = "0";
             // 
             // locationYTextBox
             // 
@@ -112,6 +113,7 @@
             this.locationYTextBox.Name = "locationYTextBox";
             this.locationYTextBox.Size = new System.Drawing.Size(100, 21);
             this.locationYTextBox.TabIndex = 7;
+            this.locationYTextBox.Text = "0";
             // 
             // sizeWTextBox
             // 
@@ -119,6 +121,7 @@
             this.sizeWTextBox.Name = "sizeWTextBox";
             this.sizeWTextBox.Size = new System.Drawing.Size(100, 21);
             this.sizeWTextBox.TabIndex = 8;
+            this.sizeWTextBox.Text = "1";
             // 
             // sizeHTextBox
             // 
@@ -126,6 +129,7 @@
             this.sizeHTextBox.Name = "sizeHTextBox";
             this.sizeHTextBox.Size = new System.Drawing.Size(100, 21);
             this.sizeHTextBox.TabIndex = 9;
+            this.sizeHTextBox.Text = "1";
             // 
             // imageCorpButton
             // 

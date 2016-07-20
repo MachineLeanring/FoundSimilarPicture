@@ -13,9 +13,9 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
 
-using DemoFoundSimilarPicture.Utils;
+using FoundSimilarPicture.Utils;
 
-namespace DemoFoundSimilarPicture.BLL
+namespace FoundSimilarPicture.BLL
 {
     public class AverageHashFingerPrintBLL : HashFingerPrintBLL
     {

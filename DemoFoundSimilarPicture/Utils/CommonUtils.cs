@@ -13,7 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace DemoFoundSimilarPicture.Utils
+namespace FoundSimilarPicture.Utils
 {
     public class CommonUtils
     {

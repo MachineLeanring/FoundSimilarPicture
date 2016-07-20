@@ -4,10 +4,10 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 
-using DemoFoundSimilarPicture.BLL;
-using DemoFoundSimilarPicture.Utils;
+using FoundSimilarPicture.BLL;
+using FoundSimilarPicture.Utils;
 
-namespace DemoFoundSimilarPicture.Test
+namespace FoundSimilarPicture.Test
 {
     public class TestClassifyGet
     {

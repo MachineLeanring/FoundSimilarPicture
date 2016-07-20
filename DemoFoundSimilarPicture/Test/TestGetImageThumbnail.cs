@@ -13,16 +13,16 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
 
-using DemoFoundSimilarPicture.Utils;
+using FoundSimilarPicture.Utils;
 
-namespace DemoFoundSimilarPicture.Test
+namespace FoundSimilarPicture.Test
 {
     class TestGetImageThumbnail
     {
         public static void test(string sourcePath, string targetPath)
         {
             Bitmap bitmap = ImageHelper.getThumbnailBitmap3(sourcePath, 32, 32);
-            ImageHelper.saveBitmap(bitmap, targetPath);
+            bitmap.Save(targetPath);
         }
     }
 }
