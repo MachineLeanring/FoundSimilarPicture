@@ -20,3 +20,5 @@ D:\Code\CS\Demo\Picture\FoundSimilarPicture\DemoFoundSimilarPicture\obj\Release\
 D:\Code\CS\Demo\Picture\FoundSimilarPicture\DemoFoundSimilarPicture\obj\Release\DemoFoundSimilarPicture.Form1.resources
 D:\Code\CS\Demo\Picture\FoundSimilarPicture\DemoFoundSimilarPicture\obj\Release\DemoFoundSimilarPicture.Properties.Resources.resources
 D:\Code\CS\Demo\Picture\FoundSimilarPicture\DemoFoundSimilarPicture\obj\Release\FoundSimilarPicture.csproj.GenerateResource.Cache
+E:\code\c#\demo\Picture\FoundSimilarPicture\DemoFoundSimilarPicture\obj\Release\FoundSimilarPicture.csprojResolveAssemblyReference.cache
+E:\code\c#\demo\Picture\FoundSimilarPicture\DemoFoundSimilarPicture\obj\Release\DemoFoundSimilarPicture.MatchSimilarImageForm.resources

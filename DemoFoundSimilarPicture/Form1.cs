@@ -34,7 +34,7 @@ namespace DemoFoundSimilarPicture
 
         private void imageSimilarMatchButtonClick(object sender, EventArgs e)
         {
-            TestFoundSimiarPicture.testFoundSimilarPicture(ImageHelper.ROOTPATH + @"..\..\images\original\original.jpg", ImageHelper.ROOTPATH + @"..\..\images\samples");
+            TestFoundSimiarPicture.testFoundSimilarPicture(ImageHelper.ROOTPATH + @"..\..\images\samples\1364398774_4118.jpg", ImageHelper.ROOTPATH + @"..\..\images\samples");
         }
 
         private void classifyGetButton_Click(object sender, EventArgs e)
@@ -58,6 +58,13 @@ namespace DemoFoundSimilarPicture
             HashFingerPrintBLL bll = new PerceptionHashFingerPrintBLL();
             string fingerPrint = bll.getImageFingerPrint(fileFullName, 32, 32);
             MessageBox.Show(String.Concat("图片 ", fileFullName, " 的指纹是： ", fingerPrint));
+        }
+
+        private void matchSimilarImageButton1_Click(object sender, EventArgs e)
+        {
+            // string image1FileFullName = FormUtils.getOpenFileDialogReturnFileName();
+            MatchSimilarImageForm form = new MatchSimilarImageForm();
+            form.ShowDialog(this);
         }
     }
 }

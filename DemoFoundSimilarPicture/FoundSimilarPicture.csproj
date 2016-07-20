@@ -63,6 +63,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\AverageHashFingerPrintBLL.cs" />
+    <Compile Include="MatchSimilarImageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MatchSimilarImageForm.Designer.cs">
+      <DependentUpon>MatchSimilarImageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\UpdateModel.cs" />
     <Compile Include="Utils\CommonUtils.cs" />
     <Compile Include="BLL\DifferenceHashFingerPrintBLL.cs" />
     <Compile Include="Utils\FileUtils.cs" />
@@ -85,6 +92,9 @@
     <Compile Include="Utils\TransformationUtils.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MatchSimilarImageForm.resx">
+      <DependentUpon>MatchSimilarImageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -138,6 +148,10 @@
     <Content Include="images\original\imageresize_vert.jpg" />
     <Content Include="images\original\lol-result-v-0.jpg" />
     <Content Include="images\original\original.jpg" />
+    <Content Include="images\samples\1364398774_4118.jpg" />
+    <Content Include="images\samples\1364398779_6376.jpg" />
+    <Content Include="images\samples\1364398783_4355.jpg" />
+    <Content Include="images\samples\1364398786_6679.jpg" />
     <Content Include="images\samples\sample_7.jpg" />
     <Content Include="images\samples\sample_0.jpg" />
     <Content Include="images\samples\sample_1.jpg" />
