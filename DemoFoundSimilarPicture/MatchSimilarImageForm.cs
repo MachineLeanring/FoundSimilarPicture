@@ -49,7 +49,6 @@ namespace DemoFoundSimilarPicture
             MessageBox.Show("汉明距离 = " + CommonUtils.hammingDistance(image1FingerPrint, image2FingerPrint));
         }
 
-
         // --------------------------------- 委托 ----------------------------------------
         private delegate void invokeUpdateTextBox(string label);
 

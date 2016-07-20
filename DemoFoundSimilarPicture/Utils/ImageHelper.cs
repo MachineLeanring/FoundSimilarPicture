@@ -332,7 +332,8 @@ namespace DemoFoundSimilarPicture
             {
                 for (int j = 0; j < height; j++)
                 {
-                    pixels[i * height + j] = rgbToGray(bitmap.GetPixel(i, j).ToArgb());
+                    // pixels[i * height + j] = rgbToGray(bitmap.GetPixel(i, j).ToArgb());
+                    pixels[i * height + j] = colorToGray(bitmap.GetPixel(i, j));
                 }
             }
 
@@ -341,7 +342,31 @@ namespace DemoFoundSimilarPicture
 
         # endregion
 
-        # region 灰度值计算
+        # region 图像灰度化
+
+        /// <summary>
+        /// 图像灰度化
+        /// </summary>
+        public static Bitmap toGray(Bitmap bmp)
+        {
+            for (int i = 0; i < bmp.Width; i++)
+            {
+                for (int j = 0; j < bmp.Height; j++)
+                {
+                    //获取该点的像素的RGB的颜色
+                    Color color = bmp.GetPixel(i, j);
+                    //利用公式计算灰度值
+                    int gray = (int)(color.R * 0.3 + color.G * 0.59 + color.B * 0.11);
+                    Color newColor = Color.FromArgb(gray, gray, gray);
+                    bmp.SetPixel(i, j, newColor);
+                }
+            }
+            return bmp;
+        }
+
+        # endregion
+
+        # region get pixel gray value
 
         /// <summary>
         /// 灰度值计算
@@ -350,10 +375,24 @@ namespace DemoFoundSimilarPicture
         /// <returns>灰度值</returns>
         public static int rgbToGray(int pixels)
         {
-            int _red = (pixels >> 16) & 0xFF;
-            int _green = (pixels >> 8) & 0xFF;
-            int _blue = (pixels) & 0xFF;
-            return (int)(0.3 * _red + 0.59 * _green + 0.11 * _blue);
+            int red = (pixels >> 16) & 0xFF;
+            int green = (pixels >> 8) & 0xFF;
+            int blue = (pixels) & 0xFF;
+            return (int)(0.3 * red + 0.59 * green + 0.11 * blue);
+        }
+
+        # endregion
+
+        # region get pixel gray value
+
+        /// <summary>
+        /// 灰度值计算
+        /// </summary>
+        /// <param name="pixels">像素</param>
+        /// <returns>灰度值</returns>
+        public static int colorToGray(Color color)
+        {
+            return (int)(0.3 * color.R + 0.59 * color.G + 0.11 * color.B);
         }
 
         # endregion
