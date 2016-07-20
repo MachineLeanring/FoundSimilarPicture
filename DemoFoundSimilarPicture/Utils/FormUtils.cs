@@ -14,7 +14,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Text;
 
-namespace DemoFoundSimilarPicture
+namespace DemoFoundSimilarPicture.Utils
 {
     public class FormUtils
     {

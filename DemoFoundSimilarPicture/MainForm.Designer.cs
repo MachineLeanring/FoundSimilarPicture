@@ -1,6 +1,6 @@
 ﻿namespace DemoFoundSimilarPicture
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -43,6 +43,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.perceptionHashFingerPrintButton = new System.Windows.Forms.Button();
             this.matchSimilarImageButton1 = new System.Windows.Forms.Button();
+            this.differenceHashFingerPrintButton = new System.Windows.Forms.Button();
+            this.testImageCropButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // compressButton
@@ -194,11 +196,33 @@
             this.matchSimilarImageButton1.UseVisualStyleBackColor = true;
             this.matchSimilarImageButton1.Click += new System.EventHandler(this.matchSimilarImageButton1_Click);
             // 
+            // differenceHashFingerPrintButton
+            // 
+            this.differenceHashFingerPrintButton.Location = new System.Drawing.Point(9, 298);
+            this.differenceHashFingerPrintButton.Name = "differenceHashFingerPrintButton";
+            this.differenceHashFingerPrintButton.Size = new System.Drawing.Size(256, 30);
+            this.differenceHashFingerPrintButton.TabIndex = 17;
+            this.differenceHashFingerPrintButton.Text = "测试差异哈希算法";
+            this.differenceHashFingerPrintButton.UseVisualStyleBackColor = true;
+            this.differenceHashFingerPrintButton.Click += new System.EventHandler(this.differenceHashFingerPrintButton_Click);
+            // 
+            // testImageCropButton
+            // 
+            this.testImageCropButton.Location = new System.Drawing.Point(9, 334);
+            this.testImageCropButton.Name = "testImageCropButton";
+            this.testImageCropButton.Size = new System.Drawing.Size(256, 30);
+            this.testImageCropButton.TabIndex = 18;
+            this.testImageCropButton.Text = "测试图片裁剪";
+            this.testImageCropButton.UseVisualStyleBackColor = true;
+            this.testImageCropButton.Click += new System.EventHandler(this.testImageCropButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(280, 313);
+            this.ClientSize = new System.Drawing.Size(279, 378);
+            this.Controls.Add(this.testImageCropButton);
+            this.Controls.Add(this.differenceHashFingerPrintButton);
             this.Controls.Add(this.matchSimilarImageButton1);
             this.Controls.Add(this.perceptionHashFingerPrintButton);
             this.Controls.Add(this.label7);
@@ -240,6 +264,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button perceptionHashFingerPrintButton;
         private System.Windows.Forms.Button matchSimilarImageButton1;
+        private System.Windows.Forms.Button differenceHashFingerPrintButton;
+        private System.Windows.Forms.Button testImageCropButton;
     }
 }
 

@@ -13,7 +13,9 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
 
-namespace DemoFoundSimilarPicture
+using DemoFoundSimilarPicture.Utils;
+
+namespace DemoFoundSimilarPicture.Test
 {
     class TestGetImageThumbnail
     {

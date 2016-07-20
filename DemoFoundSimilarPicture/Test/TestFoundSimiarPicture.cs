@@ -14,7 +14,10 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
-namespace DemoFoundSimilarPicture
+using DemoFoundSimilarPicture.BLL;
+using DemoFoundSimilarPicture.Utils;
+
+namespace DemoFoundSimilarPicture.Test
 {
     class TestFoundSimiarPicture
     {

@@ -16,7 +16,7 @@ using System.Windows.Forms;
 
 using DemoFoundSimilarPicture.Utils;
 
-namespace DemoFoundSimilarPicture
+namespace DemoFoundSimilarPicture.BLL
 {
     public class PerceptionHashFingerPrintBLL : HashFingerPrintBLL
     {

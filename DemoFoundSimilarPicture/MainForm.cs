@@ -2,11 +2,15 @@
 using System.IO;
 using System.Windows.Forms;
 
+using DemoFoundSimilarPicture.BLL;
+using DemoFoundSimilarPicture.Utils;
+using DemoFoundSimilarPicture.Test;
+
 namespace DemoFoundSimilarPicture
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
@@ -65,6 +69,21 @@ namespace DemoFoundSimilarPicture
             // string image1FileFullName = FormUtils.getOpenFileDialogReturnFileName();
             MatchSimilarImageForm form = new MatchSimilarImageForm();
             form.ShowDialog(this);
+        }
+
+        private void differenceHashFingerPrintButton_Click(object sender, EventArgs e)
+        {
+            string fileFullName = FormUtils.getOpenFileDialogReturnFileName();
+
+            HashFingerPrintBLL bll = new DifferenceHashFingerPrintBLL();
+            string fingerPrint = bll.getImageFingerPrint(fileFullName, 9, 8);
+            MessageBox.Show(String.Concat("图片 ", fileFullName, " 的指纹是： ", fingerPrint));
+        }
+
+        private void testImageCropButton_Click(object sender, EventArgs e)
+        {
+            CorpImageForm form = new CorpImageForm();
+            form.Show(this);
         }
     }
 }
