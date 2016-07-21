@@ -39,8 +39,8 @@
             this.differenceHashRadioButton = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.hammingDistanceRadioButton = new System.Windows.Forms.RadioButton();
             this.cosineSimilarityRadioButton = new System.Windows.Forms.RadioButton();
+            this.hammingDistanceRadioButton = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -100,7 +100,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(371, 28);
             this.label1.TabIndex = 5;
-            this.label1.Text = "注：汉明距离的范围为 [0, 15]，取值越大，相似度越小。\r\n    余弦相似度范围为 [0, 1]，取值越大，相似度越小。";
+            this.label1.Text = "注：汉明距离的范围为 [0, 15]，取值越大，相似度越小。\r\n    余弦相似度范围为 [0,  1]，取值越大，相似度越小。";
             // 
             // averageHashRadioButton
             // 
@@ -155,6 +155,17 @@
             this.panel2.Size = new System.Drawing.Size(234, 38);
             this.panel2.TabIndex = 10;
             // 
+            // cosineSimilarityRadioButton
+            // 
+            this.cosineSimilarityRadioButton.AutoSize = true;
+            this.cosineSimilarityRadioButton.Location = new System.Drawing.Point(160, 12);
+            this.cosineSimilarityRadioButton.Name = "cosineSimilarityRadioButton";
+            this.cosineSimilarityRadioButton.Size = new System.Drawing.Size(71, 16);
+            this.cosineSimilarityRadioButton.TabIndex = 1;
+            this.cosineSimilarityRadioButton.TabStop = true;
+            this.cosineSimilarityRadioButton.Text = "余弦定理";
+            this.cosineSimilarityRadioButton.UseVisualStyleBackColor = true;
+            // 
             // hammingDistanceRadioButton
             // 
             this.hammingDistanceRadioButton.AutoSize = true;
@@ -166,17 +177,6 @@
             this.hammingDistanceRadioButton.TabStop = true;
             this.hammingDistanceRadioButton.Text = "汉明距离";
             this.hammingDistanceRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // cosineSimilarityRadioButton
-            // 
-            this.cosineSimilarityRadioButton.AutoSize = true;
-            this.cosineSimilarityRadioButton.Location = new System.Drawing.Point(160, 12);
-            this.cosineSimilarityRadioButton.Name = "cosineSimilarityRadioButton";
-            this.cosineSimilarityRadioButton.Size = new System.Drawing.Size(71, 16);
-            this.cosineSimilarityRadioButton.TabIndex = 1;
-            this.cosineSimilarityRadioButton.TabStop = true;
-            this.cosineSimilarityRadioButton.Text = "余弦定理";
-            this.cosineSimilarityRadioButton.UseVisualStyleBackColor = true;
             // 
             // MatchSimilarImageForm
             // 

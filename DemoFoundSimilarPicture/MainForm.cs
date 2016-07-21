@@ -17,9 +17,11 @@ namespace FoundSimilarPicture
 
         private void compressButtonClick(object sender, EventArgs e)
         {
-            string targetPath = ImageHelper.ROOTPATH + @"..\..\images\compress\thumbnail.jpg";
-            TestGetImageThumbnail.test(FormUtils.getOpenFileDialogReturnFileName(), targetPath);
-            MessageBox.Show(string.Concat(@"图片已压缩，压缩后的图片路径为: ", targetPath));
+            string sourcePath = FormUtils.getOpenFileDialogReturnFileName();
+
+            ImageShowForm form = new ImageShowForm();
+            form.setSourcePath(sourcePath);
+            form.Show(this);
         }
 
         private void compressButton2_Click(object sender, EventArgs e)
@@ -38,19 +40,19 @@ namespace FoundSimilarPicture
 
         private void imageSimilarMatchButtonClick(object sender, EventArgs e)
         {
-            TestFoundSimiarPicture.testFoundSimilarPicture(ImageHelper.ROOTPATH + @"..\..\images\samples\1364398774_4118.jpg", ImageHelper.ROOTPATH + @"..\..\images\samples");
+            TestFoundSimiarPicture.testFoundSimilarPicture(ImageUtils.ROOTPATH + @"..\..\images\samples\1364398774_4118.jpg", ImageUtils.ROOTPATH + @"..\..\images\samples");
         }
 
         private void classifyGetButton_Click(object sender, EventArgs e)
         {
-            string samplesPath = ImageHelper.ROOTPATH + @"..\..\images\LOL\";
+            string samplesPath = ImageUtils.ROOTPATH + @"..\..\images\LOL\";
 
             new TestClassifyGet().testSingleImage(samplesPath, FormUtils.getOpenFileDialogReturnFileName());
         }
 
         private void classifyGetMoreButton_Click(object sender, EventArgs e)
         {
-            string samplesPath = ImageHelper.ROOTPATH + @"..\..\images\LOL\";
+            string samplesPath = ImageUtils.ROOTPATH + @"..\..\images\LOL\";
             string testFolderFullName = FormUtils.getOpenFolderDialogReturnFolderName();
 
             new TestClassifyGet().testMoreImages(samplesPath, testFolderFullName);
@@ -89,6 +91,13 @@ namespace FoundSimilarPicture
         private void perceptionHashButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show("cos = " + CommonUtils.cosineSimilarity("1221110", "1221121"));
+        }
+
+        private void imageBinaryButton_Click(object sender, EventArgs e)
+        {
+            string fileFullName = FormUtils.getOpenFileDialogReturnFileName();
+            ImageBLL.binaryImage(fileFullName, fileFullName + ".b.jpg");
+            MessageBox.Show("二值化图片完成");
         }
     }
 }

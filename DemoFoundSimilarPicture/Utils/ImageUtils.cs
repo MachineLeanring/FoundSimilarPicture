@@ -2,7 +2,7 @@
 
 ** Author:      Q-WHai
 ** Create Date: 2016/7/15 14:23:07
-** Last Modify: 2016/7/20
+** Last Modify: 2016/7/21
 ** desc：       尚未编写描述
 ** Ver.:        V0.1.0
 
@@ -17,7 +17,7 @@ using System.Runtime.InteropServices;
 
 namespace FoundSimilarPicture.Utils
 {
-    public class ImageHelper
+    public class ImageUtils
     {
         public readonly static String ROOTPATH = System.AppDomain.CurrentDomain.BaseDirectory;
 
@@ -356,7 +356,7 @@ namespace FoundSimilarPicture.Utils
         /// </summary>
         /// <param name="bmp"></param>
         /// <returns></returns>
-        public static Bitmap ConvertTo1Bpp1(Bitmap bmp)
+        public static Bitmap binaryImage1(Bitmap bmp)
         {
             int average = 0;
             for (int i = 0; i < bmp.Width; i++)
@@ -393,7 +393,7 @@ namespace FoundSimilarPicture.Utils
         /// </summary>
         /// <param name="img"></param>
         /// <returns></returns>
-        public static Bitmap ConvertTo1Bpp2(Bitmap img)
+        public static Bitmap binaryImage2(Bitmap img)
         {
             int w = img.Width;
             int h = img.Height;

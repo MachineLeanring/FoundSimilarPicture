@@ -23,3 +23,4 @@ E:\code\c#\demo\Picture\FoundSimilarPicture\DemoFoundSimilarPicture\obj\Release\
 E:\code\c#\demo\Picture\FoundSimilarPicture\DemoFoundSimilarPicture\obj\Release\FoundSimilarPicture.Properties.Resources.resources
 E:\code\c#\demo\Picture\FoundSimilarPicture\DemoFoundSimilarPicture\obj\Release\FoundSimilarPicture.exe
 E:\code\c#\demo\Picture\FoundSimilarPicture\DemoFoundSimilarPicture\obj\Release\FoundSimilarPicture.pdb
+E:\code\c#\demo\Picture\FoundSimilarPicture\DemoFoundSimilarPicture\obj\Release\FoundSimilarPicture.ImageShowForm.resources

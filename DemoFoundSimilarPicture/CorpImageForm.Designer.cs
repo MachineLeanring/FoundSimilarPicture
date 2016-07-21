@@ -145,7 +145,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(391, 242);
+            this.ClientSize = new System.Drawing.Size(391, 245);
             this.Controls.Add(this.imageCorpButton);
             this.Controls.Add(this.sizeHTextBox);
             this.Controls.Add(this.sizeWTextBox);

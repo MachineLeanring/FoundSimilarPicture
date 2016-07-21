@@ -46,6 +46,7 @@
             this.differenceHashFingerPrintButton = new System.Windows.Forms.Button();
             this.testImageCropButton = new System.Windows.Forms.Button();
             this.cosineSimilarityButton = new System.Windows.Forms.Button();
+            this.imageBinaryButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // compressButton
@@ -80,6 +81,7 @@
             // 
             // compressButton2
             // 
+            this.compressButton2.Enabled = false;
             this.compressButton2.Location = new System.Drawing.Point(205, 48);
             this.compressButton2.Name = "compressButton2";
             this.compressButton2.Size = new System.Drawing.Size(60, 30);
@@ -227,11 +229,22 @@
             this.cosineSimilarityButton.UseVisualStyleBackColor = true;
             this.cosineSimilarityButton.Click += new System.EventHandler(this.perceptionHashButton_Click);
             // 
+            // imageBinaryButton
+            // 
+            this.imageBinaryButton.Location = new System.Drawing.Point(9, 406);
+            this.imageBinaryButton.Name = "imageBinaryButton";
+            this.imageBinaryButton.Size = new System.Drawing.Size(256, 30);
+            this.imageBinaryButton.TabIndex = 20;
+            this.imageBinaryButton.Text = "图片二值化";
+            this.imageBinaryButton.UseVisualStyleBackColor = true;
+            this.imageBinaryButton.Click += new System.EventHandler(this.imageBinaryButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(279, 414);
+            this.ClientSize = new System.Drawing.Size(279, 450);
+            this.Controls.Add(this.imageBinaryButton);
             this.Controls.Add(this.cosineSimilarityButton);
             this.Controls.Add(this.testImageCropButton);
             this.Controls.Add(this.differenceHashFingerPrintButton);
@@ -279,6 +292,7 @@
         private System.Windows.Forms.Button differenceHashFingerPrintButton;
         private System.Windows.Forms.Button testImageCropButton;
         private System.Windows.Forms.Button cosineSimilarityButton;
+        private System.Windows.Forms.Button imageBinaryButton;
     }
 }
 

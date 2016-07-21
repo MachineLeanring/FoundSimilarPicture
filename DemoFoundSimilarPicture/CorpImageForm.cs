@@ -2,7 +2,7 @@
 
 ** Author:      Q-WHai
 ** Create Date: 2016/7/20
-** Last Modify: 2016/7/20
+** Last Modify: 2016/7/21
 ** desc：       尚未编写描述
 ** Ver.:        V0.1.0
 
@@ -46,7 +46,7 @@ namespace FoundSimilarPicture
             int w = int.Parse(sizeWTextBox.Text);
             int h = int.Parse(sizeHTextBox.Text);
 
-            Bitmap corpImageBitmap = ImageHelper.cropImage(new Bitmap(imageFileFullName), x, y, w, h);
+            Bitmap corpImageBitmap = ImageUtils.cropImage(new Bitmap(imageFileFullName), x, y, w, h);
             corpImageBitmap.Save(imageFileFullName + ".corp.jpg");
 
             MessageBox.Show("图片裁剪已完成，新图片路径：\n" + imageFileFullName + ".corp.jpg");

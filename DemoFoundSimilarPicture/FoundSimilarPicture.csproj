@@ -63,11 +63,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\AverageHashFingerPrintBLL.cs" />
+    <Compile Include="BLL\ImageBLL.cs" />
     <Compile Include="CorpImageForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CorpImageForm.Designer.cs">
       <DependentUpon>CorpImageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageShowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageShowForm.Designer.cs">
+      <DependentUpon>ImageShowForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MatchSimilarImageForm.cs">
       <SubType>Form</SubType>
@@ -87,10 +94,9 @@
     </Compile>
     <Compile Include="Utils\FormUtils.cs" />
     <Compile Include="BLL\HashFingerPrintBLL.cs" />
-    <Compile Include="Utils\ImageHelper.cs" />
+    <Compile Include="Utils\ImageUtils.cs" />
     <Compile Include="BLL\PerceptionHashFingerPrintBLL.cs" />
     <Compile Include="Test\TestClassifyGet.cs" />
-    <Compile Include="Test\TestGetImageThumbnail.cs" />
     <Compile Include="Test\TestImageThumbnail.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -98,6 +104,9 @@
     <Compile Include="Utils\TransformationUtils.cs" />
     <EmbeddedResource Include="CorpImageForm.resx">
       <DependentUpon>CorpImageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageShowForm.resx">
+      <DependentUpon>ImageShowForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

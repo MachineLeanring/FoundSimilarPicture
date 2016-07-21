@@ -22,10 +22,10 @@ namespace FoundSimilarPicture.BLL
         public override string getImageFingerPrint(string imageFileFullName, int targetWidth, int targetHeight)
         {
             // 第 1 步，缩小尺寸
-            Bitmap thumbnailBitmap = ImageHelper.getThumbnailBitmap3(imageFileFullName, targetWidth, targetHeight);
+            Bitmap thumbnailBitmap = ImageUtils.getThumbnailBitmap3(imageFileFullName, targetWidth, targetHeight);
 
             // 第 2 步，转化为灰度图
-            Bitmap grayThumbnailBitmap = ImageHelper.toGray(thumbnailBitmap);
+            Bitmap grayThumbnailBitmap = ImageUtils.toGray(thumbnailBitmap);
             // ImageHelper.saveBitmap(grayThumbnailBitmap, @"F:\Temp\xxx.jpg");
 
             // 第 3 步，计算像素矩阵

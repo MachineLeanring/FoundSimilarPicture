@@ -23,10 +23,10 @@ namespace FoundSimilarPicture.BLL
         public override string getImageFingerPrint(string imageFileFullName, int targetWidth, int targetHeight)
         {
             // 第 1 步，获得缩略图
-            Bitmap thumbnailBitmap = ImageHelper.getThumbnailBitmap3(imageFileFullName, targetWidth, targetHeight);
+            Bitmap thumbnailBitmap = ImageUtils.getThumbnailBitmap3(imageFileFullName, targetWidth, targetHeight);
 
             // 第 2 步，简化色彩
-            int[] pixels = ImageHelper.getSimplifyPixels(targetWidth, targetHeight, thumbnailBitmap);
+            int[] pixels = ImageUtils.getSimplifyPixels(targetWidth, targetHeight, thumbnailBitmap);
 
             // 第 3 步，计算DCT
             int[] dctPixels = new TransformationUtils().DCT(pixels, (int)Math.Sqrt(pixels.Length));
