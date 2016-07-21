@@ -45,6 +45,7 @@
             this.matchSimilarImageButton1 = new System.Windows.Forms.Button();
             this.differenceHashFingerPrintButton = new System.Windows.Forms.Button();
             this.testImageCropButton = new System.Windows.Forms.Button();
+            this.cosineSimilarityButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // compressButton
@@ -89,7 +90,7 @@
             // 
             // classifyGetButton
             // 
-            this.classifyGetButton.Location = new System.Drawing.Point(205, 191);
+            this.classifyGetButton.Location = new System.Drawing.Point(205, 155);
             this.classifyGetButton.Margin = new System.Windows.Forms.Padding(2);
             this.classifyGetButton.Name = "classifyGetButton";
             this.classifyGetButton.Size = new System.Drawing.Size(60, 30);
@@ -140,7 +141,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(12, 196);
+            this.label5.Location = new System.Drawing.Point(12, 160);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(168, 16);
             this.label5.TabIndex = 9;
@@ -150,7 +151,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(12, 231);
+            this.label6.Location = new System.Drawing.Point(12, 195);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(152, 16);
             this.label6.TabIndex = 10;
@@ -158,7 +159,7 @@
             // 
             // classifyGetMoreButton
             // 
-            this.classifyGetMoreButton.Location = new System.Drawing.Point(205, 226);
+            this.classifyGetMoreButton.Location = new System.Drawing.Point(205, 190);
             this.classifyGetMoreButton.Name = "classifyGetMoreButton";
             this.classifyGetMoreButton.Size = new System.Drawing.Size(60, 30);
             this.classifyGetMoreButton.TabIndex = 11;
@@ -170,7 +171,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.Location = new System.Drawing.Point(12, 267);
+            this.label7.Location = new System.Drawing.Point(12, 231);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(136, 16);
             this.label7.TabIndex = 12;
@@ -178,7 +179,7 @@
             // 
             // perceptionHashFingerPrintButton
             // 
-            this.perceptionHashFingerPrintButton.Location = new System.Drawing.Point(205, 262);
+            this.perceptionHashFingerPrintButton.Location = new System.Drawing.Point(205, 226);
             this.perceptionHashFingerPrintButton.Name = "perceptionHashFingerPrintButton";
             this.perceptionHashFingerPrintButton.Size = new System.Drawing.Size(60, 30);
             this.perceptionHashFingerPrintButton.TabIndex = 13;
@@ -188,7 +189,7 @@
             // 
             // matchSimilarImageButton1
             // 
-            this.matchSimilarImageButton1.Location = new System.Drawing.Point(12, 154);
+            this.matchSimilarImageButton1.Location = new System.Drawing.Point(9, 262);
             this.matchSimilarImageButton1.Name = "matchSimilarImageButton1";
             this.matchSimilarImageButton1.Size = new System.Drawing.Size(256, 30);
             this.matchSimilarImageButton1.TabIndex = 16;
@@ -198,7 +199,7 @@
             // 
             // differenceHashFingerPrintButton
             // 
-            this.differenceHashFingerPrintButton.Location = new System.Drawing.Point(9, 298);
+            this.differenceHashFingerPrintButton.Location = new System.Drawing.Point(9, 334);
             this.differenceHashFingerPrintButton.Name = "differenceHashFingerPrintButton";
             this.differenceHashFingerPrintButton.Size = new System.Drawing.Size(256, 30);
             this.differenceHashFingerPrintButton.TabIndex = 17;
@@ -208,7 +209,7 @@
             // 
             // testImageCropButton
             // 
-            this.testImageCropButton.Location = new System.Drawing.Point(9, 334);
+            this.testImageCropButton.Location = new System.Drawing.Point(9, 370);
             this.testImageCropButton.Name = "testImageCropButton";
             this.testImageCropButton.Size = new System.Drawing.Size(256, 30);
             this.testImageCropButton.TabIndex = 18;
@@ -216,11 +217,22 @@
             this.testImageCropButton.UseVisualStyleBackColor = true;
             this.testImageCropButton.Click += new System.EventHandler(this.testImageCropButton_Click);
             // 
-            // Form1
+            // cosineSimilarityButton
+            // 
+            this.cosineSimilarityButton.Location = new System.Drawing.Point(9, 298);
+            this.cosineSimilarityButton.Name = "cosineSimilarityButton";
+            this.cosineSimilarityButton.Size = new System.Drawing.Size(256, 30);
+            this.cosineSimilarityButton.TabIndex = 19;
+            this.cosineSimilarityButton.Text = "测试余弦相似性";
+            this.cosineSimilarityButton.UseVisualStyleBackColor = true;
+            this.cosineSimilarityButton.Click += new System.EventHandler(this.perceptionHashButton_Click);
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(279, 378);
+            this.ClientSize = new System.Drawing.Size(279, 414);
+            this.Controls.Add(this.cosineSimilarityButton);
             this.Controls.Add(this.testImageCropButton);
             this.Controls.Add(this.differenceHashFingerPrintButton);
             this.Controls.Add(this.matchSimilarImageButton1);
@@ -240,7 +252,7 @@
             this.Controls.Add(this.compressButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "相似图片匹配";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -266,6 +278,7 @@
         private System.Windows.Forms.Button matchSimilarImageButton1;
         private System.Windows.Forms.Button differenceHashFingerPrintButton;
         private System.Windows.Forms.Button testImageCropButton;
+        private System.Windows.Forms.Button cosineSimilarityButton;
     }
 }
 

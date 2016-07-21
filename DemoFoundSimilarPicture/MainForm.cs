@@ -85,5 +85,10 @@ namespace FoundSimilarPicture
             CorpImageForm form = new CorpImageForm();
             form.Show(this);
         }
+
+        private void perceptionHashButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("cos = " + CommonUtils.cosineSimilarity("1221110", "1221121"));
+        }
     }
 }

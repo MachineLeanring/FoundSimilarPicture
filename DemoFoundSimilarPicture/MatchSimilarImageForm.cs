@@ -54,11 +54,43 @@ namespace FoundSimilarPicture
 
         private void button3_Click(object sender, EventArgs e)
         {
-            HashFingerPrintBLL bll = new PerceptionHashFingerPrintBLL();
-            string image1FingerPrint = bll.getImageFingerPrint(textBox1.Text, 8, 8);
-            string image2FingerPrint = bll.getImageFingerPrint(textBox2.Text, 8, 8);
+            HashFingerPrintBLL bll = null;
+            int targetWidth = 0;
+            int targetHeight = 0;
 
-            MessageBox.Show("汉明距离 = " + CommonUtils.hammingDistance(image1FingerPrint, image2FingerPrint));
+            if (averageHashRadioButton.Checked)
+            {
+                bll = new AverageHashFingerPrintBLL();
+                targetWidth = 8;
+                targetHeight = 8;
+            }
+
+            if (perceptionHashRadioButton.Checked)
+            {
+                bll = new PerceptionHashFingerPrintBLL();
+                targetWidth = 8;
+                targetHeight = 8;
+            }
+
+            if (differenceHashRadioButton.Checked)
+            {
+                bll = new DifferenceHashFingerPrintBLL();
+                targetWidth = 9;
+                targetHeight = 8;
+            }
+
+            string image1FingerPrint = bll.getImageFingerPrint(textBox1.Text, targetWidth, targetHeight);
+            string image2FingerPrint = bll.getImageFingerPrint(textBox2.Text, targetWidth, targetHeight);
+
+            if (hammingDistanceRadioButton.Checked)
+            {
+                MessageBox.Show("汉明距离 = " + CommonUtils.hammingDistance(image1FingerPrint, image2FingerPrint));
+            }
+
+            if (cosineSimilarityRadioButton.Checked)
+            {
+                MessageBox.Show("余弦相似度 = " + CommonUtils.cosineSimilarityHex(image1FingerPrint, image2FingerPrint));
+            }
         }
 
         // --------------------------------- 委托 ----------------------------------------
