@@ -58,6 +58,8 @@
             this.ClientSize = new System.Drawing.Size(284, 231);
             this.Controls.Add(this.bitmapSaveButton);
             this.Controls.Add(this.bitmapShowPictureBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "ImageShowForm";
             this.Text = "ImageShowForm";
             this.Load += new System.EventHandler(this.ImageShowForm_Load);

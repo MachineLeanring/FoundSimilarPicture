@@ -2,7 +2,7 @@
 
 ** Author:      Q-WHai
 ** Create Date: 2016/7/20
-** Last Modify: 2016/7/21
+** Last Modify: 2016/7/22
 ** desc：       尚未编写描述
 ** Ver.:        V0.1.0
 
@@ -58,11 +58,17 @@ namespace FoundSimilarPicture
             int targetWidth = 0;
             int targetHeight = 0;
 
+            ImagesCompareForm form = new ImagesCompareForm();
+            form.setImage1Path(textBox1.Text);
+            form.setImage2Path(textBox2.Text);
+
             if (averageHashRadioButton.Checked)
             {
                 bll = new AverageHashFingerPrintBLL();
                 targetWidth = 8;
                 targetHeight = 8;
+
+                form.setHashAlgorithName(averageHashRadioButton.Text);
             }
 
             if (perceptionHashRadioButton.Checked)
@@ -70,6 +76,8 @@ namespace FoundSimilarPicture
                 bll = new PerceptionHashFingerPrintBLL();
                 targetWidth = 8;
                 targetHeight = 8;
+
+                form.setHashAlgorithName(perceptionHashRadioButton.Text);
             }
 
             if (differenceHashRadioButton.Checked)
@@ -77,6 +85,8 @@ namespace FoundSimilarPicture
                 bll = new DifferenceHashFingerPrintBLL();
                 targetWidth = 9;
                 targetHeight = 8;
+
+                form.setHashAlgorithName(differenceHashRadioButton.Text);
             }
 
             string image1FingerPrint = bll.getImageFingerPrint(textBox1.Text, targetWidth, targetHeight);
@@ -84,13 +94,16 @@ namespace FoundSimilarPicture
 
             if (hammingDistanceRadioButton.Checked)
             {
-                MessageBox.Show("汉明距离 = " + CommonUtils.hammingDistance(image1FingerPrint, image2FingerPrint));
+                //MessageBox.Show("汉明距离 = " + CommonUtils.hammingDistance(image1FingerPrint, image2FingerPrint));
+                form.setResultLabel("汉明距离 = " + CommonUtils.hammingDistance(image1FingerPrint, image2FingerPrint));
             }
-
             if (cosineSimilarityRadioButton.Checked)
             {
-                MessageBox.Show("余弦相似度 = " + CommonUtils.cosineSimilarityHex(image1FingerPrint, image2FingerPrint));
+                //MessageBox.Show("余弦相似度 = " + CommonUtils.cosineSimilarityHex(image1FingerPrint, image2FingerPrint));
+                form.setResultLabel("余弦相似度 = " + CommonUtils.cosineSimilarityHex(image1FingerPrint, image2FingerPrint));
             }
+
+            form.Show(this);
         }
 
         // --------------------------------- 委托 ----------------------------------------

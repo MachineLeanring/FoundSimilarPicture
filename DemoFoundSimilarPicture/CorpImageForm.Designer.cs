@@ -157,6 +157,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.corpImageBrowseButton);
             this.Controls.Add(this.imageFullNameTextBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "CorpImageForm";
             this.Text = "CorpImageForm";
             this.ResumeLayout(false);

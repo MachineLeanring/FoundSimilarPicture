@@ -192,6 +192,8 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MinimizeBox = false;
             this.Name = "MatchSimilarImageForm";
             this.Text = "比较图片相似度";
             this.panel1.ResumeLayout(false);
